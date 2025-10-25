@@ -1,140 +1,67 @@
-In this project, let's build a **Gradient Generator** app by applying the concepts we have learned till now.
+# 🎨 Gradient Generator — React Project
 
-### Refer to the image below:
+The **Gradient Generator** is a React-based application that allows users to create custom CSS linear gradients by selecting two colors and a gradient direction. It dynamically updates the background based on the user’s selections, providing a real-time preview of the generated gradient.
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/gradient-generator-output-v0.gif" alt="gradient-generator" style="max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+---
 
-### Design Files
+## ⚙️ Project Overview
 
-<details>
-<summary>Click to view</summary>
+This project demonstrates React concepts such as **state management**, **component reusability**, and **dynamic styling** using **Styled Components**.  
+The user can choose the gradient direction and pick two colors, then generate a linear gradient that updates the background instantly.
 
-- [Extra Small (Size < 576px) and Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/gradient-generator-sm-output-v0.png)
-- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/gradient-generator-lg-output-v0.png)
+---
 
-</details>
+## 🧩 Functionalities
 
-### Set Up Instructions
+- The default gradient direction is **Top**.  
+- Default colors:  
+  - **Color 1:** `#8ae323`  
+  - **Color 2:** `#014f7b`  
+- Users can select gradient direction — **Top**, **Bottom**, **Left**, or **Right**.  
+- Users can pick two colors using color pickers.  
+- The selected color values are displayed as text beside the color pickers.  
+- Clicking **Generate** updates the background with the selected direction and colors.  
+- Active direction button has **opacity: 1**, while inactive ones have **opacity: 0.5**.
 
-<details>
-<summary>Click to view</summary>
+---
 
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
+## 🧠 Methods and Concepts Used
 
-### Completion Instructions
+### 🔹 React Class Components
+- The project is built using a **class-based component** structure.  
+- State is used to store and update color values, direction, and gradient style dynamically.
 
-<details>
-<summary>Functionality to be added</summary>
-<br/>
+### 🔹 State Management
+- State variables:
+  - `color1` — stores the first color value.
+  - `color2` — stores the second color value.
+  - `direction` — stores the selected gradient direction.
+  - `generate` — triggers re-render when the **Generate** button is clicked.
 
-The app must have the following functionalities
+### 🔹 Event Handlers
+- `onChangeColor1` and `onChangeColor2` — handle color input changes.  
+- `onClickDirection` — updates the selected gradient direction.  
+- `onGenerateGradient` — applies the new gradient background.
 
-- Initially, the selected gradient direction should be the first value in the given `gradientDirectionsList`
-- The initial values for the HTML input elements with type color should be **#8ae323** and **#014f7b** respectively
-- When the values are provided for both the input elements with type color, then provided values should be the text content for the respective paragraph elements
-- When the **Generate** button is clicked after selecting the direction and picking the colors, the background of the app should have a linear gradient with the selected direction and colors provided
+### 🔹 Styled Components
+- Used to style all elements with scoped CSS inside `styledComponents.js`.  
+- Dynamic styling applied for active/inactive buttons using the `opacity` property.
 
-- The `GradientGenerator` component will consist `gradientDirectionsList`. It consists of a list of gradient directions objects with the following properties in each gradient directions object
+### 🔹 Conditional Rendering
+- The active gradient direction button changes opacity dynamically based on the selected direction.
 
-  |    Key      | Data Type |
-  | :--------:  | :-------: |
-  | directionId |  String   |
-  |    value    |  String   |
-  | displayText |  string   |
+---
 
-</details>
+## 🧰 Technologies Used
 
-<details>
-<summary>Components Structure</summary>
+- **React.js**
+- **Styled Components**
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6)**
 
-<br/>
-<div style="text-align: center;">
-    <img src="https://assets.ccbp.in/frontend/content/react-js/gradient-generator-component-breakdown-structure.png" alt="gradetient-generator-component-breakdown-structure" style="max-width:100%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)">
-</div>
-<br/>
+---
 
-</details>
+## 📜 Summary
 
-<details>
-<summary>Implementation Files</summary>
-<br/>
-
-Use these files to complete the implementation:
-
-- `src/components/GradientGenerator/index.js`
-- `src/components/GradientGenerator/styledComponents.js`
-- `src/components/GradientDirectionItem/index.js`
-- `src/components/GradientDirectionItem/styledComponents.js`
-</details>
-
-### Quick Tips
-
-<details close>
-<summary>Click to view</summary>
-<br>
-
-- The HTML input element with the type **color** is designed for the user to select the **color** from a color picker.
-
-  ```jsx
-  <input type="color" />
-  ```
-
-- You can use the CSS **opacity** property to set the degree of transparency of an element. It has a value in the range of 0 to 1 inclusive.
-
-  ```
-   opacity: 0.5;
-  ```
-
-</details>
-
-### Important Note
-
-<details>
-<summary>Click to view</summary>
-
-<br/>
-
-**The following instructions are required for the tests to pass**
-
-- The HTML container element for the linear gradient values are applied should have `data-testid` as **gradientGenerator**
-- When a gradient direction button is active then the button should have the CSS property opacity with the value **1**
-- When a gradient direction button is inactive then the button should have the CSS property opacity with the value **0.5**
-
-</details>
-
-### Resources
-
-<details>
-<summary>Colors</summary>
-
-<br/>
-
-<div style="background-color: #8ae323; width: 150px; padding: 10px; color: black">Hex: #8ae323</div>
-<div style="background-color: #014f7b; width: 150px; padding: 10px; color: white">Hex: #014f7b</div>
-<div style="background-color: #ededed; width: 150px; padding: 10px; color: black">Hex: #ededed</div>
-<div style="background-color: #334155; width: 150px; padding: 10px; color: white">Hex: #334155</div>
-<div style="background-color: #ffffff79; width: 150px; padding: 10px; color: black">Hex: #ffffff79</div>
-<div style="background-color: #1e293b; width: 150px; padding: 10px; color: white">Hex: #1e293b</div>
-<div style="background-color: #00c9b7; width: 150px; padding: 10px; color: black">Hex: #00c9b7</div>
-
-</details>
-
-<details>
-<summary>Font-families</summary>
-
-- Roboto
-
-</details>
-
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - Don't change the component folder names as those are the files being imported into the tests.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+This project combines **interactive UI design** with **React’s dynamic rendering capabilities**, providing a simple yet powerful tool for generating CSS gradients. It demonstrates key React principles like **component-based architecture**, **state handling**, and **custom styling** using **Styled Components**.
